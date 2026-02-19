@@ -3,8 +3,8 @@ import requests
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
-HF_TOKEN = os.getenv("HF_TOKEN")
+TELEGRAM_TOKEN = os.getenv("8272487181:AAF4tThM_B5GByYycDSwgc-RWmFi2S7wUEg")
+HF_TOKEN = os.getenv("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")
 
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-2"
 headers = {"Authorization": f"Bearer {HF_TOKEN}"}
@@ -35,4 +35,5 @@ app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, generate))
 
 app.run_polling()
+
 
